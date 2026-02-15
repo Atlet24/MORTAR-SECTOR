@@ -1,38 +1,39 @@
 // script.js
 
 // Smooth Scrolling
-const scrollLinks = document.querySelectorAll('a[href^="#"]');
-scrollLinks.forEach(link => {
-    link.addEventListener('click', function(e) {
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
         e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        target.scrollIntoView({
+
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
             behavior: 'smooth'
         });
     });
 });
 
 // Form Handling
-const form = document.querySelector('form');
-form.addEventListener('submit', function(e) {
+document.querySelector('form').addEventListener('submit', function(e) {
     e.preventDefault();
-    const formData = new FormData(form);
-    console.log(`Submitting form with data: ${JSON.stringify(Object.fromEntries(formData.entries()))}`);
-    // Example: send formData to server or handle it further
+    const formData = new FormData(this);
+    const data = Object.fromEntries(formData);
+    console.log(data);
+    alert('Form submitted successfully!'); // Replace with actual form submission logic
 });
 
-// Scroll Animations
-const animatedElements = document.querySelectorAll('.animate');
-const options = { threshold: 0.1 }; 
-const observer = new IntersectionObserver((entries, observer) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('fade-in');
-            observer.unobserve(entry.target);
-        }
-    });
-}, options);
-
-animatedElements.forEach(element => {
-    observer.observe(element);
+// Animations
+const elements = document.querySelectorAll('.animate');
+elements.forEach(element => {
+    element.classList.add('fade-in');
 });
+
+// CSS Animation Style
+const style = document.createElement('style');
+style.innerHTML = `
+.fade-in {
+    opacity: 0;
+    animation: fadeIn 2s forwards;
+}
+@keyframes fadeIn {
+    to { opacity: 1; }
+}`;
+document.head.appendChild(style);
