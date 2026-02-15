@@ -1,0 +1,61 @@
+index.html
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mortar Sector</title>
+<style>
+body{margin:0;font-family:Arial;background:#0b0b0b;color:#e5e5e5}
+header{background:#141414;padding:30px;text-align:center;font-size:32px;font-weight:bold;color:#b39b5e}
+section{max-width:1000px;margin:auto;padding:40px}
+.block{background:#1a1a1a;margin-bottom:30px;padding:25px;border-left:5px solid #b39b5e}
+.gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:15px}
+.gallery div{background:#2a2a2a;height:160px;display:flex;align-items:center;justify-content:center;color:#777}
+.jobs li{margin-bottom:8px}
+input,textarea,button{width:100%;padding:10px;margin-top:10px;background:#111;border:1px solid #444;color:#fff}
+button{background:#b39b5e;color:#000;font-weight:bold;cursor:pointer}
+iframe{width:100%;height:300px;border:0}
+footer{text-align:center;padding:25px;color:#777}
+</style>
+</head>
+<body>
+<header>МІНОМЕТНИЙ ПІДРОЗДІЛ — MORTAR SECTOR</header>
+<section>
+<div class="block">
+<h2>Про підрозділ</h2>
+<p>Бойовий підрозділ вогневої підтримки. Працюємо швидко, точно і результативно.</p>
+</div>
+<div class="block">
+<h2>Наші шеврони</h2>
+<div class="gallery">
+<div>Фото 1</div>
+<div>Фото 2</div>
+<div>Фото 3</div>
+<div>Фото 4</div>
+</div>
+</div>
+<div class="block">
+<h2>Вакансії</h2>
+<ul class="jobs">
+<li>Мінометник</li>
+<li>Навідник</li>
+<li>Водій</li>
+<li>Оператор БПЛА</li>
+</ul>
+</div>
+<div class="block">
+<h2>Зв’язок з нами</h2>
+<input placeholder="Ваше ім’я">
+<input placeholder="Контакт">
+<textarea rows="4" placeholder="Повідомлення"></textarea>
+<button>Надіслати</button>
+</div>
+<div class="block">
+<h2>Розташування підрозділу</h2>
+<iframe src="https://maps.google.com/maps?q=Ukraine&t=&z=6&ie=UTF8&iwloc=&output=embed"></iframe>
+</div>
+</section>
+<footer>© Mortar Sector</footer>
+</body>
+</html>
